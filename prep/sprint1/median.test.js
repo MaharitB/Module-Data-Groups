@@ -15,4 +15,9 @@ test("doesn't modify the input", () => {
   expect(list).toEqual([1, 2, 3]); // Note that the toEqual matcher checks the values inside arrays when comparing them - it doesn't use `===` on the arrays, we know that would always evaluate to false.
 });
 
-test("calculate the median of a list of even length");
+test("calculate the median of a list of even length", () => {
+  const list = [10, 20, 30, 40, 50, 60];
+  const currentOutput = calculateMedian(list);
+  const targetOutPut = 35;
+  expect(currentOutput).toEqual(targetOutPut);
+});
