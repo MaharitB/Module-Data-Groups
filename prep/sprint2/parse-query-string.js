@@ -11,11 +11,15 @@
 // return queryParams;
 function parseQueryString(queryString) {
   const queryParams = {};
-  if (queryString.length === 0) {
-    return queryParams;
+  //if (queryString.length === 0) {
+  //return queryParams;
+  //}
+  const keyValuePairs = queryString.split("&"); // keyValuePairs will point to ["sort=lowest", "colour=yellow"]
+
+  for (const pair of keyValuePairs) {
+    const [key, value] = pair.split("=");
+    queryParams[key] = value;
   }
-  const [key, value] = queryString.split("="); // key will hold 'fruit', value will hold 'banana'
-  queryParams[key] = value;
 
   return queryParams;
 }
