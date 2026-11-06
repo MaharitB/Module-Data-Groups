@@ -11,12 +11,14 @@
 // return queryParams;
 function parseQueryString(queryString) {
   const queryParams = {};
-
+  if (queryString.length === 0) {
+    return queryParams;
+  }
   const [key, value] = queryString.split("="); // key will hold 'fruit', value will hold 'banana'
   queryParams[key] = value;
 
   return queryParams;
 }
 
-console.log(parseQueryString("fruit=banana"));
+//console.log(parseQueryString("fruit=banana"));
 module.exports = parseQueryString;
